@@ -1,5 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home2/sonicbob/public_html/ticketmasterhub.com
-    - /bin/cp * $DEPLOYPATH
