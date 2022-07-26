@@ -2,16 +2,16 @@ on:
   push:
     branches:
       - main
-name: 1Deploy website on push
+name: Deploy_website_on_push
 jobs: 
   web-deploy:
-    name: 2Deploy
+    name: Job_Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 3Get lastes code
+    - name: Get_lastes_code
       uses: actions/checkout@v2.3.2
       
-    - name: 4Sync files 
+    - name: Sync_files 
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server:   ${{ secrets.FTP_SERVER }}
