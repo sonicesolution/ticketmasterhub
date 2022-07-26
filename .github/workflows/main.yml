@@ -1,0 +1,21 @@
+on: 
+  push:
+    branches:
+      - main
+name: Deploy website on push
+jobs: 
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get lastes code
+      uses: actions/checkout@v2.1.0
+      
+    - name: Sync files 
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        server:   ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: /home2/sonicbob/public_html/ticketmasterhub/
+      
